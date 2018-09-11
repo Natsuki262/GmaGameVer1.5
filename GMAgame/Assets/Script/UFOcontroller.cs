@@ -31,8 +31,11 @@ public class UFOcontroller : MonoBehaviour
         MoveUfo();
         MovementLimit();
         Abduction();
+        
+  
 
-	}
+
+    }
     void MoveUfo()
     {
         ///変数
@@ -91,6 +94,26 @@ public class UFOcontroller : MonoBehaviour
             {
                 child.gameObject.SetActive(false);
             }
+        }
+        
+    }
+    /*void OnCollisionEnter2D(Collision2D collision)
+   {
+       if(collision.gameObject.tag== "People_L")
+       {
+           Debug.Log("hit");
+       }
+   }
+   void OnTriggerEnter2D(Collider2D other)
+   {
+       Debug.Log("OnTriggerEnter2D: " + other.gameObject.name);
+   }*/
+    void OnTriggerStay(Collider other)
+    {
+        Debug.Log("通過");
+        if (other.gameObject.tag == "People_L")
+        {
+            Debug.Log("hit"+other.gameObject.tag);
         }
     }
 }
