@@ -1109,7 +1109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f4e6711eaaa5c46a5a001623bba294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  people_L: {fileID: 1580077416234728, guid: 897e759ef731ff44698284bc8bc4f652, type: 2}
+  people_L: {fileID: 1318349901866018, guid: be77634a0eae1f34ba8f49757e350ba8, type: 2}
   people_R: {fileID: 1860272891775680, guid: e940330e2d84d2f46832b8fae72e8039, type: 2}
   bike_L: {fileID: 1544111488311216, guid: ac1c471b4f05d2c47a3b0c281263b10c, type: 2}
   bike_R: {fileID: 1968168528529832, guid: 4d78d9c01f99ed245bfb6aca12d77d13, type: 2}
