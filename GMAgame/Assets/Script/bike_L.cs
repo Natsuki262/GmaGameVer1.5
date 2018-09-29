@@ -24,4 +24,15 @@ public class bike_L : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "UfoAbduction")
+        {
+            Debug.Log("hit1");
+            this.gameObject.transform.Translate(0f, 1.3f, 0);
+
+        }
+        
+
+    }
 }
