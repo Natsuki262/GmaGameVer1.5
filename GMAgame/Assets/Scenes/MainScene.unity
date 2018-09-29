@@ -1112,67 +1112,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4131538334025704, guid: 80bb60ee2ba97bc4cbdb7371b167b1bc, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283281808092678, guid: 80bb60ee2ba97bc4cbdb7371b167b1bc, type: 2}
-      propertyPath: m_IsActive
+    - target: {fileID: 70534996910059578, guid: 80bb60ee2ba97bc4cbdb7371b167b1bc,
+        type: 2}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4131538334025704, guid: 80bb60ee2ba97bc4cbdb7371b167b1bc, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -4.342
-      objectReference: {fileID: 0}
-    - target: {fileID: 4131538334025704, guid: 80bb60ee2ba97bc4cbdb7371b167b1bc, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.7893847
-      objectReference: {fileID: 0}
-    - target: {fileID: 1270260135644364, guid: 80bb60ee2ba97bc4cbdb7371b167b1bc, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 61863402063773466, guid: 80bb60ee2ba97bc4cbdb7371b167b1bc, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80bb60ee2ba97bc4cbdb7371b167b1bc, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &2130888861 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1270260135644364, guid: 80bb60ee2ba97bc4cbdb7371b167b1bc,
-    type: 2}
-  m_PrefabInternal: {fileID: 2130888860}
---- !u!70 &2130888862
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2130888861}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.00000017881393, y: -0.008119145}
-  m_Size: {x: 1.7830659, y: 4.266238}
-  m_Direction: 0
---- !u!1 &2130888863 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1283281808092678, guid: 80bb60ee2ba97bc4cbdb7371b167b1bc,
-    type: 2}
-  m_PrefabInternal: {fileID: 2130888860}
---- !u!58 &2130888864
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2130888863}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0757823, y: 0.29034472}
-  serializedVersion: 2
-  m_Radius: 2.3299966
