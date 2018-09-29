@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class people_R : MonoBehaviour {
+public class people_R : MonoBehaviour
+{
 
     float speed;        //移動速度
 
@@ -23,5 +24,16 @@ public class people_R : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "UfoAbduction")
+        {
+            Debug.Log("hit2");
+            this.gameObject.transform.Translate(0f, 3f, 0);
+
+        }
+        
+
     }
 }
