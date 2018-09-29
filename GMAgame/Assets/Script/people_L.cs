@@ -7,13 +7,15 @@ public class people_L : MonoBehaviour {
     float speed;        //移動速度
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         //移動速度をランダムに設定する
 		speed = Random.Range(0.01f, 0.03f);
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         //右に向かって移動
         transform.Translate(speed, 0, 0);
         //端まで移動したら消す
@@ -22,4 +24,16 @@ public class people_L : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "UfoAbduction")
+        {
+            Debug.Log("hit2");
+            this.gameObject.transform.Translate(0f, 3f, 0);
+
+        }
+        
+
+    }
+
 }
