@@ -1236,6 +1236,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1283281808092678, guid: 80bb60ee2ba97bc4cbdb7371b167b1bc, type: 2}
+      propertyPath: m_TagString
+      value: UFO
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80bb60ee2ba97bc4cbdb7371b167b1bc, type: 2}
   m_IsPrefabAsset: 0

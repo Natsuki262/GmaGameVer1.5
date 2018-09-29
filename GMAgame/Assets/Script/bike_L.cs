@@ -5,12 +5,16 @@ using UnityEngine;
 public class bike_L : MonoBehaviour {
 
     float speed;        //移動速度
+    public int ScoreValue;//得点格納変数
+    private ScoreManager Sm;//Scoremanager型を定義
+
 
     // Use this for initialization
     void Start()
     {
         //移動速度をランダムに設定する
         speed = Random.Range(0.04f, 0.06f);
+        Sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -32,7 +36,14 @@ public class bike_L : MonoBehaviour {
             this.gameObject.transform.Translate(0f, 1.3f, 0);
 
         }
-        
+        if (collision.gameObject.tag == "UFO")
+
+        {
+            Debug.Log("Ufohit");
+            Sm.ScoreAdd(ScoreValue);
+            Destroy(this.gameObject);
+        }
+
 
     }
 }
