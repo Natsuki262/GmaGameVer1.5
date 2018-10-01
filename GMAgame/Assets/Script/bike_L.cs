@@ -3,9 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class bike_L : MonoBehaviour {
+    [SerializeField]
+    private float speed;
 
-    float speed;        //移動速度
-    public int ScoreValue;//得点格納変数
+    [SerializeField]
+    public int AddScoreVal;
+    [SerializeField]
+    private float minSpeed;
+    [SerializeField]
+    private float maxSpeed;
+    
+   readonly int width = Screen.width;
+
+
     private ScoreManager Sm;//Scoremanager型を定義
 
 
@@ -13,7 +23,7 @@ public class bike_L : MonoBehaviour {
     void Start()
     {
         //移動速度をランダムに設定する
-        speed = Random.Range(0.04f, 0.06f);
+        speed = Random.Range(minSpeed, maxSpeed);
         Sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
@@ -40,7 +50,7 @@ public class bike_L : MonoBehaviour {
 
         {
             Debug.Log("Ufohit");
-            Sm.ScoreAdd(ScoreValue);
+            Sm.ScoreAdd(AddScoreVal);
             Destroy(this.gameObject);
         }
 
