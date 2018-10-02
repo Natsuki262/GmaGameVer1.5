@@ -7,6 +7,9 @@ public class Timemanager : MonoBehaviour {
     //☆時間について！
     //0:00～6:00まで実際の時間で1分
     //...なので1/6秒ごとにゲーム内の分のカウントを1分進めると、「ゲーム内の6時間=実際の時間で1分」になる☆彡
+    [SerializeField]
+    int endCount;       //カウントダウン終了時間
+
 
     int game_state;     //現在の状態(1:スタート前のカウントダウン　2:ゲーム中　3:しゅーりょー)
 
@@ -42,7 +45,7 @@ public class Timemanager : MonoBehaviour {
             //1:スタート前のカウントダウン
             case 1:
                 //カウントダウンの表示が終わった(4秒経った)
-                if(time == 240)
+                if(time == endCount)
                 {
                     //カウントダウンのテロップ文字の移動
                     start_countdown_transform.position = new Vector2(0, -10);
