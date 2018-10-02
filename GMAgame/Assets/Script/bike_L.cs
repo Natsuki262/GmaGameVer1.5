@@ -13,7 +13,7 @@ public class bike_L : MonoBehaviour {
     [SerializeField]
     private float maxSpeed;
     
-   readonly int width = Screen.width;
+   readonly int widthLimit = Screen.width;
 
 
     private ScoreManager Sm;//Scoremanager型を定義
