@@ -12,6 +12,8 @@ public class bike_L : MonoBehaviour {
     private float minSpeed;
     [SerializeField]
     private float maxSpeed;
+    [SerializeField]
+    private float inhaleSpeed;
     
    readonly private int widthLimit = Screen.width;
 
