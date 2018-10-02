@@ -46,13 +46,13 @@ public class bike_L : MonoBehaviour {
         if (collision.gameObject.tag == "UfoAbduction")
         {
             Debug.Log("hit1");
-            this.gameObject.transform.Translate(0, 1.3f, 0);
+            this.gameObject.transform.Translate(Vector3.up*Time.deltaTime*inhaleSpeed);
 
         }
         if (collision.gameObject.tag == "UFO")
 
         {
-            Debug.Log("Ufohit");
+            Debug.Log("UfoHit");
             Sm.ScoreAdd(AddScoreVal);
             Destroy(this.gameObject);
         }
