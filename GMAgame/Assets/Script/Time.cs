@@ -16,6 +16,8 @@ public class Time : MonoBehaviour {
     int hou;            //時
     float bg;           //背景画像の座標
 
+    Transform start_countdown_transform;
+
     // Use this for initialization
     void Start () {
         //初期値
@@ -25,6 +27,8 @@ public class Time : MonoBehaviour {
         min_10 = 0;
         hou = 0;
         bg = -2.0f;
+
+        start_countdown_transform = GameObject.Find("start_countdown").transform;
     }
 	
 	// Update is called once per frame
@@ -41,7 +45,7 @@ public class Time : MonoBehaviour {
                 if(time == 240)
                 {
                     //カウントダウンのテロップ文字の移動
-                    GameObject.Find("start_countdown").transform.position = new Vector2(0, -10);
+                    start_countdown_transform.position = new Vector2(0, -10);
                     //カウントをリセット
                     time = 0;
                     game_state = 2;
