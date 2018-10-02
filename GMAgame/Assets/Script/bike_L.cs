@@ -31,9 +31,9 @@ public class bike_L : MonoBehaviour {
     void Update()
     {
         //右に向かって移動
-        transform.Translate(speed, 0, 0);
+        transform.Translate(Vector3.right*speed*Time.deltaTime);
         //端まで移動したら消す
-        if (transform.position.x > 10.0f)
+        if (transform.position.x > widthLimit)
         {
             Destroy(gameObject);
         }
@@ -43,7 +43,7 @@ public class bike_L : MonoBehaviour {
         if (collision.gameObject.tag == "UfoAbduction")
         {
             Debug.Log("hit1");
-            this.gameObject.transform.Translate(0f, 1.3f, 0);
+            this.gameObject.transform.Translate(0, 1.3f, 0);
 
         }
         if (collision.gameObject.tag == "UFO")
