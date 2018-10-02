@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class Time : MonoBehaviour {
+public class Timemanager : MonoBehaviour {
 
     //☆時間について！
     //0:00～6:00まで実際の時間で1分
