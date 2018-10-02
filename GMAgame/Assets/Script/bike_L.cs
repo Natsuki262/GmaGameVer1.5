@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bike_L : MonoBehaviour {
     [SerializeField]
-    private float speed;
+    private float moveSpeed;
 
     [SerializeField]
     public int AddScoreVal;
@@ -24,7 +24,7 @@ public class bike_L : MonoBehaviour {
     void Start()
     {
       
-        speed = Random.Range(minSpeed, maxSpeed);
+        moveSpeed = Random.Range(minSpeed, maxSpeed);
         Sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
@@ -32,7 +32,7 @@ public class bike_L : MonoBehaviour {
     void Update()
     {
         
-        transform.Translate(Vector3.right*speed*Time.deltaTime);
+        transform.Translate(Vector3.right*moveSpeed*Time.deltaTime);
         
         if (transform.position.x > widthLimit)
         {
