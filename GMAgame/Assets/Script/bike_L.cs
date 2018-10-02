@@ -13,16 +13,17 @@ public class bike_L : MonoBehaviour {
     [SerializeField]
     private float maxSpeed;
     
-   readonly int widthLimit = Screen.width;
+   readonly private int widthLimit = Screen.width;
 
 
-    private ScoreManager Sm;//Scoremanager型を定義
+
+    private ScoreManager Sm;
 
 
     // Use this for initialization
     void Start()
     {
-        //移動速度をランダムに設定する
+      
         speed = Random.Range(minSpeed, maxSpeed);
         Sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
@@ -30,9 +31,9 @@ public class bike_L : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        //右に向かって移動
+        
         transform.Translate(Vector3.right*speed*Time.deltaTime);
-        //端まで移動したら消す
+        
         if (transform.position.x > widthLimit)
         {
             Destroy(gameObject);
