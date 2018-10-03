@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bike_R : MonoBehaviour {
 
-    private float moveSpeeda;        //移動速度
+    float speed;        //移動速度
     public int ScoreValue;//得点格納変数
     private ScoreManager Sm;//Scoremanager型を定義
 
@@ -13,7 +13,7 @@ public class bike_R : MonoBehaviour {
     void Start()
     {
         //移動速度をランダムに設定する
-        moveSpeeda = Random.Range(0.04f, 0.06f);
+        speed = Random.Range(0.04f, 0.06f);
         Sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
@@ -21,7 +21,7 @@ public class bike_R : MonoBehaviour {
     void Update()
     {
         //左に向かって移動
-        transform.Translate(-moveSpeeda, 0, 0);
+        transform.Translate(-speed, 0, 0);
         //端まで移動したら消す
         if (transform.position.x < -10.0f)
         {
