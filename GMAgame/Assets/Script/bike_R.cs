@@ -13,6 +13,7 @@ public class bike_R : MonoBehaviour {
     public int ScoreValue;//得点格納変数
     private ScoreManager Sm;//Scoremanager型を定義
 
+    readonly private int widthLimit = Screen.width;
 
     // Use this for initialization
     void Start()
@@ -28,7 +29,7 @@ public class bike_R : MonoBehaviour {
         //左に向かって移動
         transform.Translate(Vector3.left*moveSpeed*Time.deltaTime);
         //端まで移動したら消す
-        if (transform.position.x < -10.0f)
+        if (transform.position.x < widthLimit)
         {
             Destroy(gameObject);
         }
