@@ -18,7 +18,7 @@ public class bike_R : MonoBehaviour {
     void Start()
     {
         //移動速度をランダムに設定する
-        moveSpeed = Random.Range(0.04f, 0.06f);
+        moveSpeed = Random.Range(minSpeed, maxSpeed);
         Sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
@@ -26,7 +26,7 @@ public class bike_R : MonoBehaviour {
     void Update()
     {
         //左に向かって移動
-        transform.Translate(-moveSpeed, 0, 0);
+        transform.Translate(Vector3.left*moveSpeed*Time.deltaTime);
         //端まで移動したら消す
         if (transform.position.x < -10.0f)
         {
