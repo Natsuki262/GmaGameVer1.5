@@ -5,7 +5,11 @@ using UnityEngine;
 public class bike_R : MonoBehaviour {
     
     [SerializeField]
-    private float moveSpeed;        //移動速度
+    private float moveSpeed;
+    [SerializeField]
+    private float minSpeed;
+    [SerializeField]
+    private float maxSpeed;
     public int ScoreValue;//得点格納変数
     private ScoreManager Sm;//Scoremanager型を定義
 
