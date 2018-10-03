@@ -11,16 +11,18 @@ public class bike_R : MonoBehaviour {
     [SerializeField]
     private float maxSpeed;
     [SerializeField]
-    private int addScoreVal;//得点格納変数
+    private float inhaleSpeed;
 
-    private ScoreManager Sm;//Scoremanager型を定義
+    [SerializeField]
+    private int addScoreVal;
+    private ScoreManager Sm;
 
     readonly private int widthLimit = Screen.width;
 
     // Use this for initialization
     void Start()
     {
-        //移動速度をランダムに設定する
+       
         moveSpeed = Random.Range(minSpeed, maxSpeed);
         Sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
@@ -41,14 +43,14 @@ public class bike_R : MonoBehaviour {
         if (collision.gameObject.tag == "UfoAbduction")
         {
             Debug.Log("hit1");
-            this.gameObject.transform.Translate(0f, 3f, 0);
+            this.gameObject.transform.Translate(Vector3.up*Time.deltaTime*inhaleSpeed);
 
 
         }
         if (collision.gameObject.tag == "UFO")
 
         {
-            Debug.Log("Ufohit");
+            Debug.Log("UfoHit");
             Sm.ScoreAdd(addScoreVal);
             Destroy(this.gameObject);
         }
