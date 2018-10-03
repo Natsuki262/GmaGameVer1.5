@@ -10,7 +10,9 @@ public class bike_R : MonoBehaviour {
     private float minSpeed;
     [SerializeField]
     private float maxSpeed;
-    public int ScoreValue;//得点格納変数
+    [SerializeField]
+    private int addScoreVal;//得点格納変数
+
     private ScoreManager Sm;//Scoremanager型を定義
 
     readonly private int widthLimit = Screen.width;
@@ -47,7 +49,7 @@ public class bike_R : MonoBehaviour {
 
         {
             Debug.Log("Ufohit");
-            Sm.ScoreAdd(ScoreValue);
+            Sm.ScoreAdd(addScoreVal);
             Destroy(this.gameObject);
         }
 
