@@ -13,15 +13,19 @@ public class people_L : MonoBehaviour {
     [SerializeField]
     private float inhaleSpeed;
 
+    readonly private int widthLimit = Screen.width;
+
+
     public int ScoreValue;//得点格納変数
     private ScoreManager Sm;//Scoremanager型を定義
+
 
 
     // Use this for initialization
     void Start ()
     {
         //移動速度をランダムに設定する
-		moveSpeed = Random.Range(0.01f, 0.03f);
+		moveSpeed = Random.Range(minSpeed, maxSpeed);
         Sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 	
