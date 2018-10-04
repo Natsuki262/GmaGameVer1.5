@@ -15,8 +15,8 @@ public class people_L : MonoBehaviour {
 
     readonly private int widthLimit = Screen.width;
 
-
-    public int ScoreValue;//得点格納変数
+    [SerializeField]
+    private int addScoreValue;//得点格納変数
     private ScoreManager Sm;//Scoremanager型を定義
 
 
@@ -52,7 +52,7 @@ public class people_L : MonoBehaviour {
 
         {
             Debug.Log("Ufohit");
-            Sm.ScoreAdd(ScoreValue);
+            Sm.ScoreAdd(addScoreValue);
             Destroy(this.gameObject);
         }
 

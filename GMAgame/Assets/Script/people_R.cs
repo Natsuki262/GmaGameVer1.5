@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class people_R : MonoBehaviour
 {
-
-    float speed;        //移動速度
-    public int ScoreValue;//得点格納変数
+    [SerializeField]
+    private float moveSpeed;
+    [SerializeField]
+    private int addScoreValue;
     private ScoreManager Sm;//Scoremanager型を定義
 
 
@@ -14,7 +15,7 @@ public class people_R : MonoBehaviour
     void Start()
     {
         //移動速度をランダムに設定する
-        speed = Random.Range(0.01f, 0.03f);
+        moveSpeed = Random.Range(0.01f, 0.03f);
         Sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
@@ -22,7 +23,7 @@ public class people_R : MonoBehaviour
     void Update()
     {
         //左に向かって移動
-        transform.Translate(-speed, 0, 0);
+        transform.Translate(-moveSpeed, 0, 0);
         //端まで移動したら消す
         if (transform.position.x < -10.0f)
         {
@@ -41,7 +42,7 @@ public class people_R : MonoBehaviour
 
         {
             Debug.Log("Ufohit");
-            Sm.ScoreAdd(ScoreValue);
+            Sm.ScoreAdd(addScoreValue);
             Destroy(this.gameObject);
         }
 
