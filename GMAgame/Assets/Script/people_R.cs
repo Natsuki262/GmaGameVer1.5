@@ -44,7 +44,7 @@ public class people_R : MonoBehaviour
         if (collision.gameObject.tag == "UfoAbduction")
         {
             Debug.Log("hit2");
-            this.gameObject.transform.Translate(0f, 3f, 0);
+            this.gameObject.transform.Translate(Vector3.up*Time.deltaTime*inhaleSpeed);
 
         }
         if (collision.gameObject.tag == "UFO")
