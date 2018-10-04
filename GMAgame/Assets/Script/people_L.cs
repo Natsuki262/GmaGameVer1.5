@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class people_L : MonoBehaviour {
 
-    private float moveSpeed;        //移動速度
+    [SerializeField]
+    private float moveSpeed;
+    [SerializeField]
+    private float minSpeed;
+    [SerializeField]
+    private float maxSpeed;
+    [SerializeField]
+    private float inhaleSpeed;
+
     public int ScoreValue;//得点格納変数
     private ScoreManager Sm;//Scoremanager型を定義
 
