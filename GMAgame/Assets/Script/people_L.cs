@@ -33,9 +33,9 @@ public class people_L : MonoBehaviour {
 	void Update ()
     {
         //右に向かって移動
-        transform.Translate(moveSpeed, 0, 0);
+        transform.Translate(Vector3.right*moveSpeed*Time.deltaTime);
         //端まで移動したら消す
-        if (transform.position.x > 10.0f)
+        if (transform.position.x > widthLimit)
         {
             Destroy(gameObject);
         }
@@ -45,7 +45,7 @@ public class people_L : MonoBehaviour {
         if (collision.gameObject.tag == "UfoAbduction")
         {
             Debug.Log("hit2");
-            this.gameObject.transform.Translate(0f, 3f, 0);
+            this.gameObject.transform.Translate(Vector3.up*Time.deltaTime*inhaleSpeed);
 
         }
         if (collision.gameObject.tag == "UFO")
