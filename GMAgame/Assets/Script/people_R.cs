@@ -4,27 +4,37 @@ using UnityEngine;
 
 public class people_R : MonoBehaviour
 {
+    [SerializeField]
+    private float moveSpeed;
+    [SerializeField]
+    private float minSpeed;
+    [SerializeField]
+    private float maxSpeed;
+    [SerializeField]
+    private float inhaleSpeed;
 
-    float speed;        //移動速度
-    public int ScoreValue;//得点格納変数
-    private ScoreManager Sm;//Scoremanager型を定義
+    readonly private int widthLimit = Screen.width;
 
+    private ScoreManager Sm;
+
+    [SerializeField]
+    private int addScoreValue;
 
     // Use this for initialization
     void Start()
     {
         //移動速度をランダムに設定する
-        speed = Random.Range(0.01f, 0.03f);
+        moveSpeed = Random.Range(minSpeed, maxSpeed);
         Sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //左に向かって移動
-        transform.Translate(-speed, 0, 0);
+        
+        transform.Translate(Vector3.left*moveSpeed*Time.deltaTime);
         //端まで移動したら消す
-        if (transform.position.x < -10.0f)
+        if (transform.position.x < widthLimit)
         {
             Destroy(gameObject);
         }
@@ -41,7 +51,7 @@ public class people_R : MonoBehaviour
 
         {
             Debug.Log("Ufohit");
-            Sm.ScoreAdd(ScoreValue);
+            Sm.ScoreAdd(addScoreValue);
             Destroy(this.gameObject);
         }
 
