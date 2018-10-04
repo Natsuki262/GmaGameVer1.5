@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class people_L : MonoBehaviour {
 
-    float speed;        //移動速度
+    private float moveSpeed;        //移動速度
     public int ScoreValue;//得点格納変数
     private ScoreManager Sm;//Scoremanager型を定義
 
@@ -13,7 +13,7 @@ public class people_L : MonoBehaviour {
     void Start ()
     {
         //移動速度をランダムに設定する
-		speed = Random.Range(0.01f, 0.03f);
+		moveSpeed = Random.Range(0.01f, 0.03f);
         Sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 	
@@ -21,7 +21,7 @@ public class people_L : MonoBehaviour {
 	void Update ()
     {
         //右に向かって移動
-        transform.Translate(speed, 0, 0);
+        transform.Translate(moveSpeed, 0, 0);
         //端まで移動したら消す
         if (transform.position.x > 10.0f)
         {
