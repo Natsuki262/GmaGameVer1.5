@@ -6,6 +6,8 @@ public class car_R : MonoBehaviour {
 
     float speed;        //移動速度
 
+    readonly private int widthLimit = Screen.width;
+
     // Use this for initialization
     void Start()
     {
@@ -19,7 +21,7 @@ public class car_R : MonoBehaviour {
         //右に向かって移動
         transform.Translate(-speed, 0, 0);
         //端まで移動したら消す
-        if (transform.position.x < 10.0f)
+        if (transform.position.x < widthLimit)
         {
             Destroy(gameObject);
         }
