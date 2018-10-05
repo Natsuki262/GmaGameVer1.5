@@ -135,6 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a619ca646332249a6aa2b1a726a141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slowingDown: 0.98
+  changeVelocity: 500
   Ufohoge: {fileID: 1611615053403042}
 --- !u!212 &212494463886049654
 SpriteRenderer:
