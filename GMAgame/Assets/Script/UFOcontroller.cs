@@ -7,11 +7,13 @@ public class UFOcontroller : MonoBehaviour
     //変数
 
 
-    private float Velocity = 0f;//UFOの初期速度[
+   private float Velocity = 0f;//UFOの初期速度[
    private float swipeLength;//スワイプの長さ
-    [SerializeField]
+   [SerializeField]
     private float slowingDown;
-
+    [SerializeField]
+    private float changeVelocity;
+    
 
     //型
     Vector2 UfoPos;//クリック開始
@@ -60,7 +62,7 @@ public class UFOcontroller : MonoBehaviour
 
             UfoEndPos = Input.mousePosition;
             swipeLength = (UfoEndPos.x - this.UfoPos.x);
-            this.Velocity = swipeLength / 500.0f;
+            this.Velocity = swipeLength / changeVelocity;
         }
 
         transform.Translate(this.Velocity, 0, 0);//移動
@@ -103,17 +105,7 @@ public class UFOcontroller : MonoBehaviour
         }
         
     }
-    /*void OnCollisionEnter2D(Collision2D collision)
-   {
-       if(collision.gameObject.tag== "People_L")
-       {
-           Debug.Log("hit");
-       }
-   }
-   void OnTriggerEnter2D(Collider2D other)
-   {
-       Debug.Log("OnTriggerEnter2D: " + other.gameObject.name);
-   }*/
+
     void OnTriggerStay(Collider other)
     {
         Debug.Log("通過");
