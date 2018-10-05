@@ -5,8 +5,14 @@ using UnityEngine;
 public class UFOcontroller : MonoBehaviour
 {
     //変数
-    float Velocity = 0f;//UFOの初期速度[
-    float SwUfoLeng;//スワイプの長さ
+
+
+    private float Velocity = 0f;//UFOの初期速度[
+   private float swipeLength;//スワイプの長さ
+    [SerializeField]
+    private float slowingDown;
+
+
     //型
     Vector2 UfoPos;//クリック開始
     Vector2 UfoEndPos;//クリック終了
@@ -53,12 +59,12 @@ public class UFOcontroller : MonoBehaviour
 
 
             UfoEndPos = Input.mousePosition;
-            SwUfoLeng = (UfoEndPos.x - this.UfoPos.x);
-            this.Velocity = SwUfoLeng / 500.0f;
+            swipeLength = (UfoEndPos.x - this.UfoPos.x);
+            this.Velocity = swipeLength / 500.0f;
         }
 
         transform.Translate(this.Velocity, 0, 0);//移動
-        this.Velocity *= 0.98f;       
+        this.Velocity *= slowingDown;       
         
     }
     void MovementLimit()
