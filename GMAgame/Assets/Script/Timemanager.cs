@@ -4,6 +4,14 @@ using UnityEngine.UI;
 
 public class Timemanager : MonoBehaviour {
 
+    //現在の状態
+    public enum GameState
+    {
+        CountDown,      //スタート前のカウントダウン
+        OnGameMain,     //ゲーム中
+        GameOver        //ゲーム終わり
+    }
+
     //☆時間について！
     //0:00～6:00まで実際の時間で1分
     //...なので1/6秒ごとにゲーム内の分のカウントを1分進めると、「ゲーム内の6時間=実際の時間で1分」になる☆彡
@@ -11,7 +19,7 @@ public class Timemanager : MonoBehaviour {
     int endCount;       //カウントダウン終了時間
 
 
-    int game_state;     //現在の状態(1:スタート前のカウントダウン　2:ゲーム中　3:しゅーりょー)
+    GameState game_state;     //現在の状態
 
     int time;           //時間のカウント(1/60ごとにカウント)
     int min_1;          //分(1の位)
@@ -24,13 +32,13 @@ public class Timemanager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         //初期値
-        game_state = 1;
+        game_state = GameState.CountDown;
         time = 0;
         min_1 = 0;
         min_10 = 0;
         hou = 0;
         bg = -2.0f;
-
+        
         start_countdown_transform = GameObject.Find("start_countdown").transform;
     }
 	
@@ -42,8 +50,8 @@ public class Timemanager : MonoBehaviour {
         //現在の状態に合わせた処理をする
         switch(game_state)
         {
-            //1:スタート前のカウントダウン
-            case 1:
+            //スタート前のカウントダウン
+            case GameState.CountDown:
                 //カウントダウンの表示が終わった(4秒経った)
                 if(time == endCount)
                 {
@@ -51,11 +59,11 @@ public class Timemanager : MonoBehaviour {
                     start_countdown_transform.position = new Vector2(0, -10);
                     //カウントをリセット
                     time = 0;
-                    game_state = 2;
+                    game_state = GameState.OnGameMain;
                 }
                 break;
-            //2:ゲーム中
-            case 2:
+            //ゲーム中
+            case GameState.OnGameMain:
                 //1/6ごと(つまり「time=10」)にゲーム内の分のカウントを進める
                 if (time == 10)
                 {
@@ -89,7 +97,7 @@ public class Timemanager : MonoBehaviour {
                             //6時になったらタイムアップと表示して終了
                             if(hou == 6)
                             {
-                                game_state = 3;
+                                game_state = GameState.GameOver;
                                 //文字の表示
                                 GameObject.Find("timeup").transform.position = new Vector2(0, 0);
                             }
@@ -103,7 +111,7 @@ public class Timemanager : MonoBehaviour {
                 GameObject.Find("minute_1").GetComponent<Text>().text = min_1.ToString();
                 break;
             //3:しゅーりょー
-            case 3:
+            case GameState.GameOver:
                 break;
         }
     }
