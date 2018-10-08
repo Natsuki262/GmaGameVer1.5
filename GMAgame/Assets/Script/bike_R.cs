@@ -32,11 +32,8 @@ public class bike_R : MonoBehaviour {
     {
         //左に向かって移動
         transform.Translate(Vector3.left*moveSpeed*Time.deltaTime);
-        //端まで移動したら消す
-        if (transform.position.x < widthLimit)
-        {
-            Destroy(gameObject);
-        }
+        
+       
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -53,6 +50,10 @@ public class bike_R : MonoBehaviour {
             Debug.Log("UfoHit");
             Sm.ScoreAdd(addScoreVal);
             Destroy(this.gameObject);
+        }
+        if(collision.gameObject.tag=="outArea_R")
+        {
+            Destroy(gameObject);
         }
 
 
