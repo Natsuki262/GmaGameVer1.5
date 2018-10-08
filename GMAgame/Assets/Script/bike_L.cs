@@ -36,10 +36,7 @@ public class bike_L : MonoBehaviour {
         
         transform.Translate(Vector3.right*moveSpeed*Time.deltaTime);
         
-        if (transform.position.x > widthLimit)
-        {
-            Destroy(gameObject);
-        }
+        
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
