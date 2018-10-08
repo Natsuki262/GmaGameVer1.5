@@ -56,6 +56,10 @@ public class bike_L : MonoBehaviour {
             Sm.ScoreAdd(AddScoreVal);
             Destroy(this.gameObject);
         }
+        if(collision.gameObject.tag== "outArea_L")
+        {
+            Destroy(gameObject);
+        }
 
 
     }
