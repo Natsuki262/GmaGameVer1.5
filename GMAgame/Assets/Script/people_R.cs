@@ -33,11 +33,8 @@ public class people_R : MonoBehaviour
     {
         
         transform.Translate(Vector3.left*moveSpeed*Time.deltaTime);
-        //端まで移動したら消す
-        if (transform.position.x < widthLimit)
-        {
-            Destroy(gameObject);
-        }
+       
+       
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -54,7 +51,10 @@ public class people_R : MonoBehaviour
             Sm.ScoreAdd(addScoreValue);
             Destroy(this.gameObject);
         }
-
+        if(collision.gameObject.tag=="outArea_R")
+        {
+            Destroy(gameObject);
+        }
 
     }
 }
