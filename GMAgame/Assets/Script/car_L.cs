@@ -33,10 +33,7 @@ public class car_L : MonoBehaviour {
         
         transform.Translate(Vector3.right*moveSpeed*Time.deltaTime);
        
-        if (transform.position.x > widthLimit)
-        {
-            Destroy(gameObject);
-        }
+        
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -52,7 +49,10 @@ public class car_L : MonoBehaviour {
             Sm.ScoreAdd(addScoreValue);
             Destroy(this.gameObject);
         }
-
+        if(collision.gameObject.tag=="outArea_L")
+        {
+            Destroy(gameObject);
+        }
 
     }
 }
