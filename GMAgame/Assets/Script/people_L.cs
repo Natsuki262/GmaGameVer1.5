@@ -24,7 +24,7 @@ public class people_L : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        //移動速度をランダムに設定する
+        
 		moveSpeed = Random.Range(minSpeed, maxSpeed);
         Sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
@@ -32,13 +32,10 @@ public class people_L : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        //右に向かって移動
+       
         transform.Translate(Vector3.right*moveSpeed*Time.deltaTime);
-        //端まで移動したら消す
-        if (transform.position.x > widthLimit)
-        {
-            Destroy(gameObject);
-        }
+      
+        
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -54,6 +51,10 @@ public class people_L : MonoBehaviour {
             Debug.Log("Ufohit");
             Sm.ScoreAdd(addScoreValue);
             Destroy(this.gameObject);
+        }
+        if(collision.gameObject.tag=="outArea_L")
+        {
+            Destroy(gameObject);
         }
 
 
