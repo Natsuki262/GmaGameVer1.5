@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bike_R : MonoBehaviour {
-    
+public class bike_R : MonoBehaviour
+{
+
     [SerializeField]
     private float moveSpeed;
     [SerializeField]
@@ -15,40 +16,40 @@ public class bike_R : MonoBehaviour {
 
     [SerializeField]
     private int addScoreVal;
-    private ScoreManager Sm;
+    private ScoreManager sm;
 
     readonly private int widthLimit = Screen.width;
 
     // Use this for initialization
     void Start()
     {
-       
+
         moveSpeed = Random.Range(minSpeed, maxSpeed);
-        Sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //左に向かって移動
-        transform.Translate(Vector3.left*moveSpeed*Time.deltaTime);
-        
-       
+        transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+
+
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "UfoAbduction")
         {
             Debug.Log("hit1");
-            this.gameObject.transform.Translate(Vector3.up*Time.deltaTime*inhaleSpeed);
+            this.gameObject.transform.Translate(Vector3.up * Time.deltaTime * inhaleSpeed);
 
 
         }
-        if (collision.gameObject.tag == "UFO")
 
+        if (collision.gameObject.tag == "UFO")
         {
             Debug.Log("UfoHit");
-            Sm.ScoreAdd(addScoreVal);
+            sm.ScoreAdd(addScoreVal);
             Destroy(this.gameObject);
         }
         if(collision.gameObject.tag=="outArea_R")
@@ -56,8 +57,6 @@ public class bike_R : MonoBehaviour {
             Destroy(gameObject);
         }
 
-
-
-
+       
     }
 }
