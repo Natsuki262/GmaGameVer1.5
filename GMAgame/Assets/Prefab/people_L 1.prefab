@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 70226097033904336}
   m_Layer: 0
   m_Name: people_L 1
-  m_TagString: People_L
+  m_TagString: people
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

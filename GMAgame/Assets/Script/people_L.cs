@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class people_L : MonoBehaviour {
+public class people_L : MonoBehaviour
+{
 
     [SerializeField]
     private float moveSpeed;
@@ -13,51 +14,43 @@ public class people_L : MonoBehaviour {
     [SerializeField]
     private float inhaleSpeed;
 
-    readonly private int widthLimit = Screen.width;
+
 
     [SerializeField]
-    private int addScoreValue;//得点格納変数
-    private ScoreManager Sm;//Scoremanager型を定義
-
+    private int addScoreValue;
+    private ScoreManager sm;
 
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
-        
-		moveSpeed = Random.Range(minSpeed, maxSpeed);
-        Sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+
+        moveSpeed = Random.Range(minSpeed, maxSpeed);
+        sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-       
-        transform.Translate(Vector3.right*moveSpeed*Time.deltaTime);
-      
-        
+
+        transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+
+
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "UfoAbduction")
         {
             Debug.Log("hit2");
-            this.gameObject.transform.Translate(Vector3.up*Time.deltaTime*inhaleSpeed);
-
+            this.gameObject.transform.Translate(Vector3.up * Time.deltaTime * inhaleSpeed);
         }
-        if (collision.gameObject.tag == "UFO")
 
+        if (collision.gameObject.tag == "UFO")
         {
             Debug.Log("Ufohit");
-            Sm.ScoreAdd(addScoreValue);
+            sm.ScoreAdd(addScoreValue);
             Destroy(this.gameObject);
-        }
-        if(collision.gameObject.tag=="outArea_L")
-        {
-            Destroy(gameObject);
-        }
-
-
+        }    
     }
 
 }

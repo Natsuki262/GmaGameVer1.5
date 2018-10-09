@@ -13,10 +13,10 @@ public class car_L : MonoBehaviour {
     [SerializeField]
     private float inahleSpeed;
 
-    readonly private int widthLimit = Screen.width;
+   
     [SerializeField]
     private int addScoreValue;
-    private ScoreManager Sm;
+    private ScoreManager sm;
 
 
     // Use this for initialization
@@ -24,7 +24,7 @@ public class car_L : MonoBehaviour {
     {
       
         moveSpeed = Random.Range(minspeed, maxSpeed);
-        Sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -42,17 +42,12 @@ public class car_L : MonoBehaviour {
             Debug.Log("Carhit");
             this.gameObject.transform.Translate(Vector3.up*Time.deltaTime*inahleSpeed);
         }
-        if (collision.gameObject.tag == "UFO")
 
+        if (collision.gameObject.tag == "UFO")
         {
             Debug.Log("Ufohit");
-            Sm.ScoreAdd(addScoreValue);
+            sm.ScoreAdd(addScoreValue);
             Destroy(this.gameObject);
-        }
-        if(collision.gameObject.tag=="outArea_L")
-        {
-            Destroy(gameObject);
-        }
-
+        }    
     }
 }
