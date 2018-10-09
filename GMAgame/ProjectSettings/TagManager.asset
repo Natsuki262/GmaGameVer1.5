@@ -9,6 +9,9 @@ TagManager:
   - UFO
   - outArea_L
   - outArea_R
+  - bike
+  - car
+  - people
   layers:
   - Default
   - TransparentFX

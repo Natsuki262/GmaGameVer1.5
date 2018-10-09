@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50836621206700492}
   m_Layer: 0
   m_Name: bike_L
-  m_TagString: Untagged
+  m_TagString: bike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
