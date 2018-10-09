@@ -52,10 +52,6 @@ public class bike_L : MonoBehaviour
             Debug.Log("UfoHit");
             sm.ScoreAdd(AddScoreVal);
             Destroy(this.gameObject);
-        }
-        if (collision.gameObject.tag == "outArea_L")
-        {
-            Destroy(gameObject);
-        }
+        }    
     }
 }
