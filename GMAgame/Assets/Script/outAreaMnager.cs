@@ -13,4 +13,20 @@ public class outAreaMnager : MonoBehaviour {
 	void Update () {
 		
 	}
+     void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag=="bike")
+        {
+            Destroy(collision.gameObject);
+        }
+        if(collision.gameObject.tag=="car")
+        {
+            Destroy(collision.gameObject);
+        }
+        if(collision.gameObject.tag=="people")
+        {
+            Destroy(collision.gameObject);
+        }
+        
+    }
 }
