@@ -50,12 +50,7 @@ public class people_L : MonoBehaviour
             Debug.Log("Ufohit");
             sm.ScoreAdd(addScoreValue);
             Destroy(this.gameObject);
-        }
-
-        if (collision.gameObject.tag == "outArea_L")
-        {
-            Destroy(gameObject);
-        }
+        }    
     }
 
 }
