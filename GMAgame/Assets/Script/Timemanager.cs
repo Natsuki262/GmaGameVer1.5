@@ -23,7 +23,7 @@ public class Timemanager : MonoBehaviour {
 
     int time;           //時間のカウント(1/60ごとにカウント)
     int minFirstDigit;          //分(1の位)
-    int min_10;         //分(10の位)
+    int minSecondDigit;         //分(10の位)
     int hou;            //時
     float bg;           //背景画像の座標
 
@@ -35,7 +35,7 @@ public class Timemanager : MonoBehaviour {
         game_state = GameState.CountDown;
         time = 0;
         minFirstDigit = 0;
-        min_10 = 0;
+        minSecondDigit = 0;
         hou = 0;
         bg = -2.0f;
         
@@ -85,14 +85,14 @@ public class Timemanager : MonoBehaviour {
                     //1の位が10になったら繰り上がり
                     if (minFirstDigit == 10)
                     {
-                        min_10++;
+                        minSecondDigit++;
                         minFirstDigit = 0;
 
                         //10の位が6になったら、分のカウントを0にして時間のカウントを1進める
-                        if (min_10 == 6)
+                        if (minSecondDigit == 6)
                         {
                             hou++;
-                            min_10 = 0;
+                            minSecondDigit = 0;
 
                             //6時になったらタイムアップと表示して終了
                             if(hou == 6)
@@ -107,7 +107,7 @@ public class Timemanager : MonoBehaviour {
 
                 //カウントの数を画面に反映させる
                 GameObject.Find("hour").GetComponent<Text>().text = hou.ToString();
-                GameObject.Find("minute_10").GetComponent<Text>().text = min_10.ToString();
+                GameObject.Find("minute_10").GetComponent<Text>().text = minSecondDigit.ToString();
                 GameObject.Find("minute_1").GetComponent<Text>().text = minFirstDigit.ToString();
                 break;
             //3:しゅーりょー
