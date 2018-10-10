@@ -27,7 +27,8 @@ public class Timemanager : MonoBehaviour {
     int hour;            //時
     float bg;           //背景画像の座標
 
-    Transform start_countdown_transform;
+    Transform start_countdown_transform;        //カウントダウン用の画像
+    Transform BackGround_transform;             //背景画像
 
     // Use this for initialization
     void Start () {
@@ -40,6 +41,7 @@ public class Timemanager : MonoBehaviour {
         bg = -2.0f;
         
         start_countdown_transform = GameObject.Find("start_countdown").transform;
+        BackGround_transform = GameObject.Find("BG_sky").transform;
     }
 	
 	// Update is called once per frame
@@ -79,7 +81,7 @@ public class Timemanager : MonoBehaviour {
                         //現在の背景座標に値を足して上にずらしていく
                         bg += 0.1f;
                         //背景画像の移動
-                        GameObject.Find("BG_sky").transform.position = new Vector2(0, bg);
+                        BackGround_transform.position = new Vector2(0, bg);
                     }
 
                     //1の位が10になったら繰り上がり
