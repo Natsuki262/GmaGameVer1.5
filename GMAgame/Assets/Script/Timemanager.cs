@@ -22,7 +22,7 @@ public class Timemanager : MonoBehaviour {
     GameState game_state;     //現在の状態
 
     int time;           //時間のカウント(1/60ごとにカウント)
-    int min_1;          //分(1の位)
+    int minFirstDigit;          //分(1の位)
     int min_10;         //分(10の位)
     int hou;            //時
     float bg;           //背景画像の座標
@@ -34,7 +34,7 @@ public class Timemanager : MonoBehaviour {
         //初期値
         game_state = GameState.CountDown;
         time = 0;
-        min_1 = 0;
+        minFirstDigit = 0;
         min_10 = 0;
         hou = 0;
         bg = -2.0f;
@@ -71,7 +71,7 @@ public class Timemanager : MonoBehaviour {
                     time = 0;
 
                     //分のカウントを進める
-                    min_1++;
+                    minFirstDigit++;
 
                     //5時以降は背景の色を少しづつ変えていく
                     if (hou == 5)
@@ -83,10 +83,10 @@ public class Timemanager : MonoBehaviour {
                     }
 
                     //1の位が10になったら繰り上がり
-                    if (min_1 == 10)
+                    if (minFirstDigit == 10)
                     {
                         min_10++;
-                        min_1 = 0;
+                        minFirstDigit = 0;
 
                         //10の位が6になったら、分のカウントを0にして時間のカウントを1進める
                         if (min_10 == 6)
@@ -108,7 +108,7 @@ public class Timemanager : MonoBehaviour {
                 //カウントの数を画面に反映させる
                 GameObject.Find("hour").GetComponent<Text>().text = hou.ToString();
                 GameObject.Find("minute_10").GetComponent<Text>().text = min_10.ToString();
-                GameObject.Find("minute_1").GetComponent<Text>().text = min_1.ToString();
+                GameObject.Find("minute_1").GetComponent<Text>().text = minFirstDigit.ToString();
                 break;
             //3:しゅーりょー
             case GameState.GameOver:
