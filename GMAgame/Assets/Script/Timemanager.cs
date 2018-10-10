@@ -24,7 +24,7 @@ public class Timemanager : MonoBehaviour {
     int time;           //時間のカウント(1/60ごとにカウント)
     int minFirstDigit;          //分(1の位)
     int minSecondDigit;         //分(10の位)
-    int hou;            //時
+    int hour;            //時
     float bg;           //背景画像の座標
 
     Transform start_countdown_transform;
@@ -36,7 +36,7 @@ public class Timemanager : MonoBehaviour {
         time = 0;
         minFirstDigit = 0;
         minSecondDigit = 0;
-        hou = 0;
+        hour = 0;
         bg = -2.0f;
         
         start_countdown_transform = GameObject.Find("start_countdown").transform;
@@ -74,7 +74,7 @@ public class Timemanager : MonoBehaviour {
                     minFirstDigit++;
 
                     //5時以降は背景の色を少しづつ変えていく
-                    if (hou == 5)
+                    if (hour == 5)
                     {
                         //現在の背景座標に値を足して上にずらしていく
                         bg += 0.1f;
@@ -91,11 +91,11 @@ public class Timemanager : MonoBehaviour {
                         //10の位が6になったら、分のカウントを0にして時間のカウントを1進める
                         if (minSecondDigit == 6)
                         {
-                            hou++;
+                            hour++;
                             minSecondDigit = 0;
 
                             //6時になったらタイムアップと表示して終了
-                            if(hou == 6)
+                            if(hour == 6)
                             {
                                 game_state = GameState.GameOver;
                                 //文字の表示
@@ -106,7 +106,7 @@ public class Timemanager : MonoBehaviour {
                 }
 
                 //カウントの数を画面に反映させる
-                GameObject.Find("hour").GetComponent<Text>().text = hou.ToString();
+                GameObject.Find("hour").GetComponent<Text>().text = hour.ToString();
                 GameObject.Find("minute_10").GetComponent<Text>().text = minSecondDigit.ToString();
                 GameObject.Find("minute_1").GetComponent<Text>().text = minFirstDigit.ToString();
                 break;
