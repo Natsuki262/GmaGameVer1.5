@@ -32,6 +32,7 @@ public class Timemanager : MonoBehaviour {
     Transform Timeup_transform;                 //時間切れのテキスト
     Text hour_text;                             //時間の文字
     Text minSecondDigit_text;                   //分(10の位)の文字
+    Text minFirstDigit_text;                    //分(1の位)の文字
 
     // Use this for initialization
     void Start () {
@@ -48,6 +49,7 @@ public class Timemanager : MonoBehaviour {
         Timeup_transform = GameObject.Find("timeup").transform;
         hour_text = GameObject.Find("hour").GetComponent<Text>();
         minSecondDigit_text = GameObject.Find("minute_10").GetComponent<Text>();
+        minFirstDigit_text = GameObject.Find("minute_1").GetComponent<Text>();
     }
 	
 	// Update is called once per frame
@@ -116,7 +118,7 @@ public class Timemanager : MonoBehaviour {
                 //カウントの数を画面に反映させる
                 hour_text.text = hour.ToString();
                 minSecondDigit_text.text = minSecondDigit.ToString();
-                GameObject.Find("minute_1").GetComponent<Text>().text = minFirstDigit.ToString();
+                minFirstDigit_text.text = minFirstDigit.ToString();
                 break;
             //3:しゅーりょー
             case GameState.GameOver:
