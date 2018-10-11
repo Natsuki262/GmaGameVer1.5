@@ -30,7 +30,8 @@ public class Timemanager : MonoBehaviour {
     Transform start_countdown_transform;        //カウントダウン用の画像
     Transform BackGround_transform;             //背景画像
     Transform Timeup_transform;                 //時間切れのテキスト
-    Text hour_text;                        //時間の文字
+    Text hour_text;                             //時間の文字
+    Text minSecondDigit_text;                   //分(10の位)の文字
 
     // Use this for initialization
     void Start () {
@@ -46,6 +47,7 @@ public class Timemanager : MonoBehaviour {
         BackGround_transform = GameObject.Find("BG_sky").transform;
         Timeup_transform = GameObject.Find("timeup").transform;
         hour_text = GameObject.Find("hour").GetComponent<Text>();
+        minSecondDigit_text = GameObject.Find("minute_10").GetComponent<Text>();
     }
 	
 	// Update is called once per frame
@@ -113,7 +115,7 @@ public class Timemanager : MonoBehaviour {
 
                 //カウントの数を画面に反映させる
                 hour_text.text = hour.ToString();
-                GameObject.Find("minute_10").GetComponent<Text>().text = minSecondDigit.ToString();
+                minSecondDigit_text.text = minSecondDigit.ToString();
                 GameObject.Find("minute_1").GetComponent<Text>().text = minFirstDigit.ToString();
                 break;
             //3:しゅーりょー
