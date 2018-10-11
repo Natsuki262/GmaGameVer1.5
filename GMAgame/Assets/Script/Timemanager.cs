@@ -29,6 +29,7 @@ public class Timemanager : MonoBehaviour {
 
     Transform start_countdown_transform;        //カウントダウン用の画像
     Transform BackGround_transform;             //背景画像
+    Transform Timeup_transform;                 //時間切れのテキスト
 
     // Use this for initialization
     void Start () {
@@ -42,6 +43,7 @@ public class Timemanager : MonoBehaviour {
         
         start_countdown_transform = GameObject.Find("start_countdown").transform;
         BackGround_transform = GameObject.Find("BG_sky").transform;
+        Timeup_transform = GameObject.Find("timeup").transform;
     }
 	
 	// Update is called once per frame
@@ -101,7 +103,7 @@ public class Timemanager : MonoBehaviour {
                             {
                                 game_state = GameState.GameOver;
                                 //文字の表示
-                                GameObject.Find("timeup").transform.position = new Vector2(0, 0);
+                                Timeup_transform.position = new Vector2(0, 0);
                             }
                         }
                     }
