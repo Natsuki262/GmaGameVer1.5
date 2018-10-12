@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.5
-  AddScoreVal: 0
+  AddScoreVal: 10
   minSpeed: 1.5
   maxSpeed: 5
   inhaleSpeed: 100

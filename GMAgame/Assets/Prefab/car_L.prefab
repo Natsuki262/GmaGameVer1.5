@@ -103,7 +103,7 @@ MonoBehaviour:
   minspeed: 3
   maxSpeed: 5
   inahleSpeed: 80
-  addScoreValue: 0
+  addScoreValue: 20
 --- !u!212 &212210291397755550
 SpriteRenderer:
   m_ObjectHideFlags: 1

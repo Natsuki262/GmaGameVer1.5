@@ -93,7 +93,7 @@ MonoBehaviour:
   minSpeed: 1.5
   maxSpeed: 3
   inhaleSpeed: 55
-  addScoreVal: 0
+  addScoreVal: 10
 --- !u!212 &212728884176155142
 SpriteRenderer:
   m_ObjectHideFlags: 1
