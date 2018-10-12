@@ -3,27 +3,49 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class car_R : MonoBehaviour {
+    [SerializeField]
+   private float moveSpeed;//移動速度
+    [SerializeField]
+    private float minSpeed;
+    [SerializeField]
+    private float maxSpeed;
+    [SerializeField]
+    private float inhaleSpeed;
 
-    float speed;        //移動速度
 
-    readonly private int widthLimit = Screen.width;
+
+    [SerializeField]
+    private int addScoreValue;
+    private ScoreManager sm;
 
     // Use this for initialization
     void Start()
     {
-        //移動速度をランダムに設定する
-        speed = Random.Range(0.05f, 0.07f);
+      
+        moveSpeed = Random.Range(minSpeed, maxSpeed);
+        sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //右に向かって移動
-        transform.Translate(-speed, 0, 0);
-        //端まで移動したら消す
-        if (transform.position.x < widthLimit)
+        transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+       
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "UfoAbduction")
         {
-            Destroy(gameObject);
+            Debug.Log("hit1");
+            this.gameObject.transform.Translate(Vector3.up * Time.deltaTime * inhaleSpeed);
+        }
+
+        if (collision.gameObject.tag == "UFO")
+        {
+            Debug.Log("UfoHit");
+            sm.ScoreAdd(addScoreValue);
+            Destroy(this.gameObject);
         }
     }
 }
+
