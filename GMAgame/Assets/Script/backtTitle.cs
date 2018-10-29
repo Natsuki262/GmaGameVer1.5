@@ -30,7 +30,7 @@ public class backtTitle : MonoBehaviour
     }
     public void PushStartButton()
     {
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("TitleScene");
 
     }
 }
