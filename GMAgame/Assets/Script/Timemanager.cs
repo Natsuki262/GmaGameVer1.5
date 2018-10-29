@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class Timemanager : MonoBehaviour {
 
     //現在の状態
@@ -122,6 +122,7 @@ public class Timemanager : MonoBehaviour {
                 break;
             //3:しゅーりょー
             case GameState.GameOver:
+                SceneManager.LoadScene("ResultScene");
                 break;
         }
     }
