@@ -7,14 +7,16 @@ public class ScoreManager : MonoBehaviour
 {
 
 
-    private int Score = 0;
+    public static int Score = 0;
     private Text ScoreCount;//scoreのUIオブジェクト
 
     // Use this for initialization
     void Start()
     {
+        DontDestroyOnLoad(this);
         ScoreCount = GameObject.Find("ScoreCount").GetComponent<Text>();
         ScoreCount.text = "Score:" + Score;
+
     }
 
     // Update is called once per frame
