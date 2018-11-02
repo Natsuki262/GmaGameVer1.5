@@ -416,7 +416,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1327062577}
+      - m_Target: {fileID: 0}
         m_MethodName: PushStartButton
         m_Mode: 1
         m_Arguments:
@@ -427,12 +427,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 1327062577}
+        m_MethodName: PushTileButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1074,7 +1074,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1327062576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46be109be4936a3418748ecfa412c72c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f29a167181abcb4f834332a5d091638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1327062578
@@ -1255,7 +1255,7 @@ GameObject:
   - component: {fileID: 1887416216}
   - component: {fileID: 1887416215}
   m_Layer: 5
-  m_Name: Score
+  m_Name: ResultScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

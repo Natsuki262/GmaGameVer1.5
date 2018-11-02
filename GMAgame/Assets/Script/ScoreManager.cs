@@ -31,4 +31,8 @@ public class ScoreManager : MonoBehaviour
         Score += ScoreData;
         ScoreCount.text = "Score:" + Score;
     }
+    public static int ResutScore()
+    {
+        return Score;
+    }
 }
