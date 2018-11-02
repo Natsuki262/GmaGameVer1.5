@@ -13,7 +13,7 @@ public class ResultManager : MonoBehaviour {
         resultScore = ScoreManager.ResutScore();
         Debug.Log(resultScore);
         ResultScore = GameObject.Find("ResultScore").GetComponent<Text>();
-        ResultScore.text = "000"+resultScore;
+        ResultScore.text = ""+resultScore;
     }
 	
 	// Update is called once per frame
