@@ -11,6 +11,7 @@ public class ResultManager : MonoBehaviour {
     void Start ()
     {
         resultScore = ScoreManager.ResutScore();
+        ScoreManager.Score = 0;
         Debug.Log(resultScore);
         ResultScore = GameObject.Find("ResultScore").GetComponent<Text>();
         ResultScore.text = ""+resultScore;
@@ -25,6 +26,8 @@ public class ResultManager : MonoBehaviour {
     public void PushTileButton()
     {
         SceneManager.LoadScene("TitleScene");
+        resultScore = 0;
+        
     }
 
 }

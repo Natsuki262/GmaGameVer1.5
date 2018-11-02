@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        DontDestroyOnLoad(this);
+      
         ScoreCount = GameObject.Find("ScoreCount").GetComponent<Text>();
         ScoreCount.text = "Score:" + Score;
 
