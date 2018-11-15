@@ -37,7 +37,7 @@ public class people_L : MonoBehaviour
 
 
     }
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D (Collider2D collision)
     {
         if (collision.gameObject.tag == "UfoAbduction")
         {
