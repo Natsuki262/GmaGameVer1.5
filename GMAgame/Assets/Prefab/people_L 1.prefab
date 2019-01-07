@@ -73,7 +73,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.053603053}
@@ -111,7 +111,7 @@ MonoBehaviour:
   moveSpeed: 0.5
   minSpeed: 0.5
   maxSpeed: 1
-  inhaleSpeed: 120
+  inhaleSpeed: 10
   addScoreValue: 1
 --- !u!212 &212633269219579814
 SpriteRenderer:
